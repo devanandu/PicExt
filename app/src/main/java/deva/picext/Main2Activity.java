@@ -30,7 +30,7 @@ public class Main2Activity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 DB d=new DB(getApplicationContext());
 
-                Toast.makeText(Main2Activity.this,"gfhjk",Toast.LENGTH_LONG);
+                Toast.makeText(Main2Activity.this,d.attend(array.getItem(position).toString()),Toast.LENGTH_LONG).show();
             }
         });
     }

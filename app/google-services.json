@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "894391239511",
+    "firebase_url": "https://otp-test-13e1b.firebaseio.com",
+    "project_id": "otp-test-13e1b",
+    "storage_bucket": "otp-test-13e1b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894391239511:android:113eefa843a4961a",
+        "android_client_info": {
+          "package_name": "deva.picext"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894391239511-ier4ho8u6973lv7s2ntuo8lssdap0ghf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "deva.picext",
+            "certificate_hash": "ab00c278625cc5287e56a8fba21ff5d7b5365e32"
+          }
+        },
+        {
+          "client_id": "894391239511-c50hf3q4rngrdqvpspu0io7c9ofgt5ke.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC95hXxx0OZIAQ4K-Tz_ngjmT48d7Q-L1Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894391239511-c50hf3q4rngrdqvpspu0io7c9ofgt5ke.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

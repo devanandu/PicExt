@@ -2,6 +2,7 @@ package deva.picext;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.media.AudioManager;
 import android.os.Bundle;
@@ -18,15 +19,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    SharedPreferences mPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        mPreferences= getApplicationContext().getSharedPreferences("logged", 0);
+        String first = mPreferences.getString("login", null);
+//        if((first != null)){
+//            Intent i = new Intent(MainActivity.this,Main2Activity.class);
+//            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(i);
+//        }
         setSupportActionBar(toolbar);
         final EditText n=(EditText)findViewById(R.id.name);
         final EditText p=(EditText)findViewById(R.id.pass);
@@ -35,8 +45,17 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 DB db=new DB(getApplicationContext());
-                final TextView s=(TextView) findViewById(R.id.stud);
+                db.all();
                 String c=db.view(n.getText().toString(),p.getText().toString());
+                if(c.equals("success")){
+//                    SharedPreferences.Editor editor = mPreferences.edit();
+//                    editor.putString("login",n.getText().toString());
+//                    editor.commit();
+                    Intent i = new Intent(MainActivity.this,Main2Activity.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(i);
+                }
+                final TextView s=(TextView) findViewById(R.id.stud);
                 s.setText(c);
                 Snackbar.make(view, "", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
